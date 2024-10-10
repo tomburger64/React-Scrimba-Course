@@ -1,0 +1,45 @@
+/* header styling */
+
+.header{
+  height: 90px; /*90 + 10 = 100px*/
+  padding: 10px 30px;
+
+  background: #282b30; /*another discord color but only used for the header, also since it's a small project I won't make a var for it*/
+}
+
+.logo-title, .logo-title img{
+  height: 100%;
+  gap: 1rem;
+}
+
+.header > div > span{
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--react-blue);
+}
+
+.header > span {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  /* background: white; */
+}
+
+
+
+/*responsive header*/
+@media screen and (max-width: 600px){
+  .header{
+    flex-direction: column;
+    height: auto;
+  }
+  .logo-title > img{
+    max-height: 90px;
+    width: max(15vw, 60px);
+  }
+  .logo-title > span, header > span{
+    font-size: max(4vw, 1.6rem) !important;
+    text-align: center;
+  }
+}

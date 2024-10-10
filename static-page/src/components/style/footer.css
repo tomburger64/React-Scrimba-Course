@@ -1,0 +1,12 @@
+.footer{
+    background: var(--react-blue);
+
+    margin: 0 !important; /*important cuz 'my' was used (bootstrap)*/
+}
+
+@media screen and (max-width: 1345px){
+    .footer > p{
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+}

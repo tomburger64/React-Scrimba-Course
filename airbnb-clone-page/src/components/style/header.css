@@ -1,0 +1,12 @@
+.header{
+    background: white;
+
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+
+    height: 70px;
+    padding: 0 30px;
+}
+
+.logo{
+    width: 82px;
+}
