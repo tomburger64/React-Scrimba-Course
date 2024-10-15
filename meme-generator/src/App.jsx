@@ -6,8 +6,8 @@ import Header from './components/header';
 
 export default function App() {
   return (
-    <>
+    <div className="container d-flex justify-content-center align-items-center">
       <Header />
-    </>
+    </div>
   )
 };
