@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './style/header.css';
 import logo from '../assets/troll-face.png'
 

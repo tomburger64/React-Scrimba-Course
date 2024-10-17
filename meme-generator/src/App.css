@@ -1,4 +1,9 @@
+body{
+  background: #222;
+}
+
 .container{
   min-height: 100dvh;
   width: 450px;
+  max-width: 450px;
 }
