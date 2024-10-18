@@ -10,7 +10,7 @@ export default function Meme(){
                     <input className="p-3" type="text" placeholder='Bottom line'/>
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center'><p className='p-3'>Get a new meme</p></button>
+                <button className='d-flex justify-content-center align-items-center p-3'>Get a new meme</button>
             </form>
         </div>
     )
