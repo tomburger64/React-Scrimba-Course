@@ -1,5 +1,8 @@
 import './style/meme.css';
 
+// imgflip api meme img
+import getMeme from '../imgFlipApi';
+
 export default function Meme(){
     
     function clickHandler(){
@@ -20,7 +23,7 @@ export default function Meme(){
                     </label>        
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={clickHandler}>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onClick={getMeme}>Get a new meme</button>
             </form>
         </div>
     )
