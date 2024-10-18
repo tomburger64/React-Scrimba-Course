@@ -19,9 +19,7 @@ export default function Meme(){
                     </label>        
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={
-                    (x => {x.preventDefault; getMeme;})
-                    }>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onMouseOver={getMeme}>Get a new meme</button>
             </form>
         </div>
     )
