@@ -1,6 +1,11 @@
 import './style/meme.css';
 
 export default function Meme(){
+    
+    function clickHandler(){
+        console.log('I was clicked')
+    }
+    
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
@@ -15,7 +20,7 @@ export default function Meme(){
                     </label>        
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center p-3'>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onClick={clickHandler}>Get a new meme</button>
             </form>
         </div>
     )
