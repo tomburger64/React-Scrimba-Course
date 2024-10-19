@@ -3,7 +3,7 @@ import './style/meme.css';
 // imgflip api meme img
 import getMeme from '../imgFlipApi';
 
-export default function Meme(){
+export default function MemeGen(){
     
     return(
         <div className='form-bg w-100'>
@@ -19,9 +19,7 @@ export default function Meme(){
                     </label>        
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={
-                    (x => {x.preventDefault; getMeme;})
-                    }>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onMouseOver={getMeme}>Get a new meme</button>
             </form>
         </div>
     )
