@@ -14,12 +14,14 @@ export default function MemeGen(){
                         <input className="p-3 text-uppercase" type="text" placeholder='MFW (my face when)' />
                     </label>
                     
-                    <label htmlFor="">Top caption
+                    <label htmlFor="">Bottom caption
                         <input className="p-3 text-uppercase" type="text" placeholder='Ultrakill speedrun' />
                     </label>        
                 </div>
 
                 <button className='d-flex justify-content-center align-items-center p-3' onMouseOver={getMeme}>Get a new meme</button>
+
+                <img src={memeImg} alt="" />
             </form>
         </div>
     )
