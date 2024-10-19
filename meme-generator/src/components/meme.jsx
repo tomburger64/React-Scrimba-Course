@@ -32,6 +32,7 @@ export default function MemeGen(){
 
                 <button className='d-flex justify-content-center align-items-center p-3' onMouseOver={getMeme}>Get a new meme</button>
 
+                {/* chatgpt made ma add an id, don't forget to remove it ifd not using it */}
                 <img src={memeSrc} id="memeSrc" alt="" />
             </form>
         </div>
