@@ -1,10 +1,22 @@
 import './style/meme.css';
 
-export default function MemeGen(){
+import memesData from '../fakeApiData';
 
-    // I should use states but haven't seen it in the course yet so I won't use them
-    // thought about having a variable that awaits for the function to be run and then replacing its value from ' "" ' to the meme url
-    
+
+
+function randomMemes(){
+    const urls = memesData.data.memes.map(meme => meme);
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max)
+    };
+
+    // console.log(urls);
+    let random = getRandomInt(urls.length);
+    console.log(urls[random])
+};
+
+export default function MemeGen(){
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
@@ -19,7 +31,7 @@ export default function MemeGen(){
                     </label>        
                 </div>
 
-                <button className='d-flex justify-content-center align-items-center p-3'>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onClick={randomMemes} type='button'>Get a new meme</button>
             </form>
         </div>
     )
