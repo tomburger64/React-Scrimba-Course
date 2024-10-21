@@ -6,14 +6,16 @@ import memesData from '../fakeApiData';
 
 function randomMemes(){
     const urls = memesData.data.memes.map(meme => meme);
+    // get all the urls
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max)
     };
+    // get a random int
 
-    // console.log(urls);
     let random = getRandomInt(urls.length);
     console.log(urls[random])
+    // calling random url using the random int as index
 };
 
 export default function MemeGen(){
