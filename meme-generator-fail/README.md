@@ -1,10 +1,14 @@
 # React + Vite
 
-Copying this project and making it without actually using the API just as the course intends for the following reasons:
+POV: didn't read the instructions properly:
+"Copying this project and making it without actually using the API just as the course intends for the following reasons:
 - can't use states yet, the course isn't there yet so idk how to manage an "empty" element
 - unsuccessfully tried to have a variable = to ' "" ' and then changing itself to the url called from the api
 
-So I'll be cloning this project and doing it the intended way, using an array of objects instead of an API :(
+So I'll be cloning this project and doing it the intended way, using an array of objects instead of an API :("
+
+Is what I said but I just realised the challenge explicitely says "don't worry about displaying the image yet"
+I guess I divided the exercise in two now, in this folder I made the API call, in the other I used the mock API data
 
 
 
