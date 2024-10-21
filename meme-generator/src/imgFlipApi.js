@@ -22,7 +22,7 @@ export default async function getMeme(){
         }
 
         // reach a random int in the urls array
-        let memeImg = memeUrls[getRandomInt(99)];
+        let memeImg = memeUrls[getRandomInt(99)]; //could've also used .length
         console.log(memeImg);
         return memeImg;
     };

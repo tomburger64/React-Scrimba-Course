@@ -5,16 +5,8 @@ import getMeme from '../imgFlipApi';
 
 export default function MemeGen(){
 
-    // I should use states but haven't seen it in the crouse yet so I won't use them
+    // I should use states but haven't seen it in the course yet so I won't use them
     // thought about having a variable that awaits for the function to be run and then replacing its value from ' "" ' to the meme url
-
-    // chatgpt made this
-    let memeSrc = ""
-    async function fetchMemeImage() {
-        imgSrc = await getMeme(); // Appelle la fonction API pour obtenir un meme
-        document.getElementById('memeSrc').src = imgSrc; // Met à jour la source de l'image
-    }
-    // ---
     
     return(
         <div className='form-bg w-100'>
@@ -32,8 +24,7 @@ export default function MemeGen(){
 
                 <button className='d-flex justify-content-center align-items-center p-3' onMouseOver={getMeme}>Get a new meme</button>
 
-                {/* chatgpt made ma add an id, don't forget to remove it ifd not using it */}
-                <img src={memeSrc} id="memeSrc" alt="" />
+                <img src={memeSrc} alt="" />
             </form>
         </div>
     )

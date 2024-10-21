@@ -1,5 +1,13 @@
 # React + Vite
 
+Copying this project and making it without actually using the API just as the course intends for the following reasons:
+- can't use states yet, the course isn't there yet so idk how to manage an emùpty element
+- unsuccessfully tried to have a variable = to ' "" ' and then changing itself to the url called from the api
+
+So I'll be cloning this project and doing it the intended way, using an array of objects instead of an API :(
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
