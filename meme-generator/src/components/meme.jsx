@@ -56,31 +56,28 @@ export default function MemeGen(){
     const date = new Date()
     const hours = date.getHours()
     */
-    const date = new Date()
-    const hours = date.getHours()
+    const date = new Date();
+    const hours = date.getHours();
 
     function greeting(name) {
-        let timeOfDay
+        let timeOfDay;
 
-        if (hours >= 4 && hours <= 11.9){
-            timeOfDay = "morning"
-            console.log(`Good ${timeOfDay}, ${name}`)
+        if (hours >= 4 && hours <= 11){
+            timeOfDay = "morning";
         }
-        else if (hours >= 12 && hours <= 16.9){
-            timeOfDay = "afternoon"
-            console.log(`Good ${timeOfDay}, ${name}`)
+        else if (hours >= 12 && hours <= 16){
+            timeOfDay = "afternoon";
         }
-        else if (hours >= 17 && hours <= 19.9
+        else if (hours >= 17 && hours <= 19
         ){
-            timeOfDay = "evening"
-            console.log(`Good ${timeOfDay}, ${name}`)
+            timeOfDay = "evening";
         }
         else if (hours >= 20 && hours <= 3.9){
-            timeOfDay = "night"
-            console.log(`Good ${timeOfDay}, ${name}`)
+            timeOfDay = "night";
         }
-    }
-    greeting("Bob")
+        console.log(`Good ${timeOfDay}, ${name}`);
+    };
+    greeting("Bob");
 
 
 
