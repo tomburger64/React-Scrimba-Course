@@ -3,7 +3,7 @@ import './style/meme.css';
 import memesData from '../fakeApiData';
 
 
-
+let randomMeme
 function randomMemes(){
     const urls = memesData.data.memes.map(meme => meme);
     // get all the urls
@@ -13,8 +13,8 @@ function randomMemes(){
     };
     // get a random int
 
-    let random = getRandomInt(urls.length);
-    console.log(urls[random])
+    let randomInt = getRandomInt(urls.length);
+    randomMeme = urls[randomInt]
     // calling random url using the random int as index
 };
 
@@ -22,6 +22,7 @@ export default function MemeGen(){
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
+                <p>{randomMeme}</p>
                 <div className="d-flex justify-content-between">
                     
                     <label htmlFor="">Top caption
