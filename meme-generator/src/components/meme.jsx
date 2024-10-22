@@ -22,18 +22,20 @@ function randomMemes(){
 // https://v2.scrimba.com/learn-react-c0e/~029
 let thingsArray = ["Thing 1", "Thing 2"]
 const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
-function addThing(){thingsArray.push("Thing " + (thingsArray.length + 1))}
-console.log(thingsArray)
-addThing()
-console.log(thingsArray)
-addThing()
-console.log(thingsArray)
-addThing()
+function addThing(){
+    thingsArray.push("Thing " + (thingsArray.length + 1))
+    console.log(thingsArray)
+    event.preventDefault(); //deprecated but idc it's just for here and now
+}
+// also added a button on top that triggers the function (will be deleted once the exercise is done)
+// - - - - -
 
 export default function MemeGen(){
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
+                <button onClick={addThing}>Click to add thing</button>
+                {thingsElements}
                 <p>{randomMeme}</p>
                 <div className="d-flex justify-content-between">
                     
