@@ -18,6 +18,18 @@ function randomMemes(){
     // calling random url using the random int as index
 };
 
+// exercise "break" (still inside the course)
+// https://v2.scrimba.com/learn-react-c0e/~029
+let thingsArray = ["Thing 1", "Thing 2"]
+const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+function addThing(){thingsArray.push("Thing " + (thingsArray.length + 1))}
+console.log(thingsArray)
+addThing()
+console.log(thingsArray)
+addThing()
+console.log(thingsArray)
+addThing()
+
 export default function MemeGen(){
     return(
         <div className='form-bg w-100'>
