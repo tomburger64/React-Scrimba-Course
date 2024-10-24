@@ -6,15 +6,15 @@ import React from "react"
 import "./style/counter.css"
 
 export default function Counter() {
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(0);
     
     function add() {
-        setCount(count + 1)
-    }
+        setCount(prevCount => prevCount + 1);
+    };
     
     function subtract() {
-        setCount(count - 1)
-    }
+        setCount(prevCount => prevCount - 1);
+    };
     
     return (
         <div className="counter">
@@ -24,5 +24,5 @@ export default function Counter() {
             </div>
             <button className="counter--plus" onClick={add}>+</button>
         </div>
-    )
-}
+    );
+};
