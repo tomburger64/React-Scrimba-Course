@@ -1,4 +1,6 @@
 import React from 'react';
+// to import states, either import React ↑, or import while destructuring:
+// import {useState} from "react";
 
 import './style/meme.css';
 
@@ -24,21 +26,22 @@ export default function MemeGen(){
 
     // exercise "break" (still inside the course)
     // https://v2.scrimba.com/learn-react-c0e/~029
-        const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
+    // const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
     
-    function addItem() {
-        const newThingText = `Thing ${things.length + 1}`
-        setThings(prevState => [...prevState, newThingText]);
-        event.preventDefault();
-    }
+    // function addItem() {
+    //     const newThingText = `Thing ${things.length + 1}`
+    //     setThings(prevState => [...prevState, newThingText]);
+    //     event.preventDefault();
+    // }
     
-    const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+    // const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
     // also added a button on top that triggers the function (will be deleted once the exercise is done)
     // - - - - -
 
 
 
     // other exercise (introduction to states)
+    // https://v2.scrimba.com/learn-react-c0e/~02b
     /*
     Challenge: complete the function below
     Given a name, return "Good <timeOfDay>, <name>!" depending
@@ -56,28 +59,28 @@ export default function MemeGen(){
     const date = new Date()
     const hours = date.getHours()
     */
-    const date = new Date();
-    const hours = date.getHours();
+    // const date = new Date();
+    // const hours = date.getHours();
 
-    function greeting(name) {
-        let timeOfDay;
+    // function greeting(name) {
+    //     let timeOfDay;
 
-        if (hours >= 4 && hours <= 11){
-            timeOfDay = "morning";
-        }
-        else if (hours >= 12 && hours <= 16){
-            timeOfDay = "afternoon";
-        }
-        else if (hours >= 17 && hours <= 19
-        ){
-            timeOfDay = "evening";
-        }
-        else if (hours >= 20 && hours <= 3.9){
-            timeOfDay = "night";
-        }
-        console.log(`Good ${timeOfDay}, ${name}`);
-    };
-    greeting("Bob");
+    //     if (hours >= 4 && hours <= 11){
+    //         timeOfDay = "morning";
+    //     }
+    //     else if (hours >= 12 && hours <= 16){
+    //         timeOfDay = "afternoon";
+    //     }
+    //     else if (hours >= 17 && hours <= 19
+    //     ){
+    //         timeOfDay = "evening";
+    //     }
+    //     else if (hours >= 20 && hours <= 3.9){
+    //         timeOfDay = "night";
+    //     }
+    //     console.log(`Good ${timeOfDay}, ${name}`);
+    // };
+    // greeting("Bob");
 
 
 
