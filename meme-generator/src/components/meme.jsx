@@ -68,6 +68,13 @@ export default function MemeGen(){
     // - - - - -
 
 
+
+    // reminder to self (considering how my code was before I had to "cheat"):
+    // use the state directly, not sopme variable that's indirectly linked to the state unless you want a headache
+    // - tom
+
+
+
     // meme img state
     const [memeImg, setMemeImg] = React.useState('');
 
