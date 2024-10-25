@@ -6,22 +6,6 @@ import './style/meme.css';
 
 import memesData from '../fakeApiData';
 
-
-let randomMeme;
-function randomMemes(){
-    const urls = memesData.data.memes.map(meme => meme);
-    // get all the urls
-
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    };
-    // get a random int
-
-    let randomInt = getRandomInt(urls.length);
-    randomMeme = urls[randomInt].url;
-    // calling random url using the random int as index
-};
-
 export default function MemeGen(){
 
     // exercise "break" (still inside the course)
@@ -81,13 +65,31 @@ export default function MemeGen(){
     // greeting("Bob");
     // - - - - -
 
+    let randomMeme;
+    function randomMemes(){
+        const urls = memesData.data.memes.map(meme => meme);
+        // get all the urls
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        };
+        // get a random int
+
+        let randomInt = getRandomInt(urls.length);
+        return randomMeme = urls[randomInt].url;
+        // calling random url using the random int as index
+    };
+
     function testLog(){
+        console.log(randomMemes())
         console.log(randomMeme)
+        console.log(memeImg)
     }
 
+    // meme img state
     const [memeImg, setMemeImg] = React.useState('');
     function getUrl(){
-        setMemeImg(prevMemeImg => randomMeme);
+        setMemeImg(randomMemes());
     };
 
     return(
@@ -108,7 +110,7 @@ export default function MemeGen(){
                 </div>
 
                 <button className='d-flex justify-content-center align-items-center p-3' onClick={randomMemes} type='button'>Get a new meme</button>
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={testLog} type='button'>log randommeme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onClick={testLog} type='button'>Do a test log</button>
             </form>
             <img src={randomMeme} alt="" />
         </div>
