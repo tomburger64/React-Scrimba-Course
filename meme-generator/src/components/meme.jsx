@@ -132,7 +132,7 @@ export default function MemeGen(){
                     Do a test log
                 </button>
             </form>
-            <img src={memeImg} alt="" />  {/* Use memeImg state instead of randomMeme */}
+            <img src={memeImg} alt="" className='px-5 w-100' />  {/* Use memeImg state instead of randomMeme */}
         </div>
     )
 }
