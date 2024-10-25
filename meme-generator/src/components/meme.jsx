@@ -6,6 +6,8 @@ import './style/meme.css';
 
 import memesData from '../fakeApiData';
 
+
+
 export default function MemeGen(){
 
     // exercise "break" (still inside the course)
@@ -65,41 +67,43 @@ export default function MemeGen(){
     // greeting("Bob");
     // - - - - -
 
-    let randomMeme;
-    function randomMemes(){
-        const urls = memesData.data.memes.map(meme => meme);
-        // get all the urls
-
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-        };
-        // get a random int
-
-        let randomInt = getRandomInt(urls.length);
-        return randomMeme = urls[randomInt].url;
-        // calling random url using the random int as index
-    };
-
-    function testLog(){
-        console.log(randomMemes())
-        console.log(randomMeme)
-        console.log(memeImg)
-    }
 
     // meme img state
     const [memeImg, setMemeImg] = React.useState('');
-    function getUrl(){
-        setMemeImg(randomMemes());
+
+    // returns random url from the api data
+    function randomMemes(){
+        // get all the urls
+        const urls = memesData.data.memes.map(meme => meme.url);
+
+        // get random int
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        };
+        // max length is data length
+        let randomInt = getRandomInt(urls.length);
+
+        // return random meme img url
+        return urls[randomInt];
     };
+
+    // log stuff to check if it's all ok
+    function testLog(){
+        console.log(randomMemes())
+        console.log(memeImg)
+    }
+
+
+    function getNewMeme(e){
+        e.preventDefault()  // prevent page reload
+        setMemeImg(randomMemes())  // call random meme img url function as state
+    }
 
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
-                {/* <button onClick={addItem}>Click to add thing</button>
-                {thingsElements} */}
-                <p>{randomMeme}</p>
+                <p>{memeImg}</p>  {/* Use memeImg state instead of randomMeme */}
                 <div className="d-flex justify-content-between">
-                    
                     <label htmlFor="">Top caption
                         <input className="p-3 text-uppercase" type="text" placeholder='MFW (my face when)' />
                     </label>
@@ -108,11 +112,20 @@ export default function MemeGen(){
                         <input className="p-3 text-uppercase" type="text" placeholder='Ultrakill speedrun' />
                     </label>        
                 </div>
-
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={randomMemes} type='button'>Get a new meme</button>
-                <button className='d-flex justify-content-center align-items-center p-3' onClick={testLog} type='button'>Do a test log</button>
+                <button 
+                    className='d-flex justify-content-center align-items-center p-3' 
+                    onClick={getNewMeme} 
+                    type='button'>
+                    Get a new meme
+                </button>
+                <button 
+                    className='d-flex justify-content-center align-items-center p-3' 
+                    onClick={testLog} 
+                    type='button'>
+                    Do a test log
+                </button>
             </form>
-            <img src={randomMeme} alt="" />
+            <img src={memeImg} alt="" />  {/* Use memeImg state instead of randomMeme */}
         </div>
     )
 }
