@@ -18,10 +18,8 @@ function randomMemes(){
     // get a random int
 
     let randomInt = getRandomInt(urls.length);
-    randomMeme = urls[randomInt];
+    randomMeme = urls[randomInt].url;
     // calling random url using the random int as index
-
-    console.log(randomMeme);
 };
 
 export default function MemeGen(){
@@ -83,7 +81,9 @@ export default function MemeGen(){
     // greeting("Bob");
     // - - - - -
 
-
+    function testLog(){
+        console.log(randomMeme)
+    }
 
     const [memeImg, setMemeImg] = React.useState('');
     function getUrl(){
@@ -108,8 +108,9 @@ export default function MemeGen(){
                 </div>
 
                 <button className='d-flex justify-content-center align-items-center p-3' onClick={randomMemes} type='button'>Get a new meme</button>
+                <button className='d-flex justify-content-center align-items-center p-3' onClick={testLog} type='button'>log randommeme</button>
             </form>
-            <div className="meme-container"><img src={memeImg} alt="" /></div>
+            <img src={randomMeme} alt="" />
         </div>
     )
 }
