@@ -120,6 +120,11 @@ export default function MemeGen(){
     //         </div>
     //     </div>
     // )
+    // 
+    // 
+    // 
+    // okay now it's a from scratch exercise (pretty sure it's the same thing but I gotta do it from zero) so I'll make a new component
+    // 
     // - - - - -
 
 
