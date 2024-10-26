@@ -20,7 +20,10 @@ export default function TernaryExs(){
 
         setIsGoingOut(prevState => {
             prevState = !prevState;
-            prevState = !prevState;
+            // prevState = !prevState;
+            // thought you'd have to flip it twice so that it doesn't change the answer but apparently the exercise just wants the value to flip on click so here
+            // it does make more sense than flipping it twice for no reason, lol (oops)
+
             return prevState
         });
     };
