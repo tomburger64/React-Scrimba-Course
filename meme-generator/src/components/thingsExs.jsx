@@ -1,3 +1,20 @@
+// what was done before I made this file:
+
+// exercise "break" (still inside the course)
+    // https://v2.scrimba.com/learn-react-c0e/~029
+    // const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
+    
+    // function addItem() {
+    //     const newThingText = `Thing ${things.length + 1}`
+    //     setThings(prevState => [...prevState, newThingText]);
+    //     event.preventDefault();
+    // }
+    
+    // const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+    // also added a button on top that triggers the function (will be deleted once the exercise is done)
+    
+    // - - - - -
+
 import React from 'react';
 
 export default function ThingsExs() {

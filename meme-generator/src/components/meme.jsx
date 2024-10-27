@@ -10,20 +10,6 @@ import memesData from '../fakeApiData';
 
 export default function MemeGen(){
 
-    // exercise "break" (still inside the course)
-    // https://v2.scrimba.com/learn-react-c0e/~029
-    // const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
-    
-    // function addItem() {
-    //     const newThingText = `Thing ${things.length + 1}`
-    //     setThings(prevState => [...prevState, newThingText]);
-    //     event.preventDefault();
-    // }
-    
-    // const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
-    // also added a button on top that triggers the function (will be deleted once the exercise is done)
-    // - - - - -
-
     // other exercise (introduction to states)
     // https://v2.scrimba.com/learn-react-c0e/~02b
     /*
@@ -66,68 +52,6 @@ export default function MemeGen(){
     // };
     // greeting("Bob");
     // - - - - -
-
-
-
-    // quick ternary exercise (from the course)
-    // export default function App() {
-    //     /**
-    //      * Challenge: Replace the if/else below with a ternary
-    //      * to determine the text that should display on the page
-    //      */
-    //     const isGoingOut = false
-    // 
-    //     function answer(){
-    //         return isGoingOut ? "Yes" : "No" // Use ternary here
-    //     }
-    // 
-    //     return (
-    //         <div className="state">
-    //             <h1 className="state--title">Do I feel like going out tonight?</h1>
-    //             <div className="state--value">
-    //                 <h1>{answer()}</h1> {/* add '()' for the func to run automatically*/}
-    //             </div>
-    //         </div>
-    //     )
-    // }
-    // 
-    // works but the course's solution is better:
-    // let answer = isGoingOut ? "Yes" : "No" (also don't add '()' when calling the js in the jsx)
-    // 
-    // 
-    // 
-    // second exercise for ternary op (put the ternary directly in the js call)
-    // const isGoingOut = true
-    // let answer
-    // 
-    // return (
-    //     <div className="state">
-    //         <h1 className="state--title">Do I feel like going out tonight?</h1>
-    //         <div className="state--value">
-    //             <h1>{answer = isGoingOut ? "Yes" : "No"}</h1>
-    //         </div>
-    //     </div>
-    // )
-    // 
-    // again, works but solution is better (directly taking the var's value):
-    // const isGoingOut = true
-    // 
-    // return (
-    //     <div className="state">
-    //         <h1 className="state--title">Do I feel like going out tonight?</h1>
-    //         <div className="state--value">
-    //             <h1>{isGoingOut ? "Yes" : "No"}</h1>
-    //         </div>
-    //     </div>
-    // )
-    // 
-    // 
-    // 
-    // okay now it's a from scratch exercise (pretty sure it's the same thing but I gotta do it from zero) so I'll make a new component
-    // 
-    // - - - - -
-
-
 
     // reminder to self (considering how my code was before I had to "cheat"):
     // use the state directly, not through some variable that's indirectly linked to the state unless you want a headache
