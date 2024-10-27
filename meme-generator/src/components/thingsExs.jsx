@@ -28,12 +28,13 @@ export default function ThingsExs() {
     const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]);
     
     function addItem() {
-        setThingsArray(prevThingsArray => [...prevThingsArray + `Thing ${prevThingsArray.length + 1}`]);
+        setThingsArray(prevThingsArray => {
+            return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`]
+        });
     }
     
-    console.log(thingsArray);
     addItem();
-    console.log(thingsArray);
+    console.log(thingsArray); // ← no idea why it loops
     
     const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
     
