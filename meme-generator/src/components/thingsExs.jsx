@@ -19,28 +19,25 @@ import React from 'react';
 
 export default function ThingsExs() {
     /**
-     * Challenge: Convert the code below to use an array
-     * held in state instead of a local variable. Initialize 
-     * the state array with the same 2 items below
-     * 
-     * Don't worry about fixing `addItem` quite yet.
+     * Challenge: See if you can do it all again by yourself :)
      */
-    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]);
     
+    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]);
+
     function addItem() {
         setThingsArray(prevThingsArray => {
-            return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`]
+            return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`];
         });
-    }
+        // had to cheat for the spread opp cuz I didn't realize I put a '+' instead of ','
+    };
     
-    addItem();
-    console.log(thingsArray); // ← no idea why it loops
-    
-    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>);
+    console.log(thingsArray)
+    console.log(thingsElements)
     
     return (
-        <div>
-            <button onClick={addItem}>Add Item</button>
+        <div className='d-flex flex-column align-items-center w-100 bg-white'>
+            <button onClick={addItem} className='my-5'>Add Item</button>
             {thingsElements}
         </div>
     )
