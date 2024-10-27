@@ -34,10 +34,6 @@ export default function ThingsExs() {
     console.log(thingsArray);
     addItem();
     console.log(thingsArray);
-
-    useEffect(() => {
-        console.log("État actuel:", thingsArray);
-    }, [thingsArray]);
     
     const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
     
