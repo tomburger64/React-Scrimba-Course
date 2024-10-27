@@ -33,7 +33,7 @@ export default function TernaryExs(){
         <div className="state">
             <h1 className="state--title">Do I feel like going out tonight?</h1>
             <div className="state--value" onClick={setAnswer}>
-                <h1 className='text-center'>{isGoingOut ? "Yes" : "No"}</h1>
+                <button className='text-center p-5 rounded-circle'>{isGoingOut ? "Yes" : "No"}</button>
                 {/* clicking just inverts the answer */}
             </div>
         </div>
