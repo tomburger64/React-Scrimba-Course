@@ -12,7 +12,7 @@
     
     // const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
     // also added a button on top that triggers the function (will be deleted once the exercise is done)
-    
+
     // - - - - -
 
 import React from 'react';
@@ -25,14 +25,10 @@ export default function ThingsExs() {
      * 
      * Don't worry about fixing `addItem` quite yet.
      */
-    const thingsArray = ["Thing 1", "Thing 2"]
+    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]);
     
     function addItem() {
-        // We'll work on this next
-        // const newThingText = `Thing ${thingsArray.length + 1}`
-        // thingsArray.push(newThingText)
-        // document.getElementById()
-        // console.log(thingsArray)
+        
     }
     
     const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
