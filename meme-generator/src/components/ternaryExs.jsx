@@ -65,7 +65,7 @@ import React from 'react';
 // css
 import './style/ternary-exs.css';
 
-export default function TernaryExs(){
+export default function Ternary(){
     /**
      * Challenge: 
      * - Initialize state for `isGoingOut` as a boolean
