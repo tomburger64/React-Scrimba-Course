@@ -27,15 +27,15 @@ export default function ContactCard() {
                 <img src="https://picsum.photos/200" className="card--image" />
                 <div className="card--info">
                     <img 
-                        src={`../images/star-empty.png`} 
+                        src="https://picsum.photos/20" 
                         className="card--favorite"
                         onClick={toggleFavorite}
                     />
                     <h2 className="card--name">
-                        John Doe
+                        {`${contact.firstName} ${contact.lastName}`}
                     </h2>
-                    <p className="card--contact">+1 (719) 555-1212</p>
-                    <p className="card--contact">itsmyrealname@example.com</p>
+                    <p className="card--contact">{contact.phone}</p>
+                    <p className="card--contact">{contact.email}</p>
                 </div>
                 
             </article>
