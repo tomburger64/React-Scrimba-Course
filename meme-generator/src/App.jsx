@@ -15,7 +15,8 @@ export default function App() {
       <MemeGen />
       {/* <Counter /> */}
       {/* <Ternary /> */}
-      <ThingsExs />
+      {/* <ThingsExs /> */}
+      <ContactCard />
     </div>
   )
 };

@@ -1,5 +1,7 @@
 import React from "react"
 
+
+
 export default function ContactCard() {
     const [contact, setContact] = React.useState({
         firstName: "John",
@@ -8,6 +10,7 @@ export default function ContactCard() {
         email: "itsmyrealname@example.com",
         isFavorite: false
     })
+    
     /**
      * Challenge: Fill in the values in the markup
      * using the properties of our state object above
@@ -21,7 +24,7 @@ export default function ContactCard() {
     return (
         <main>
             <article className="card">
-                <img src="./images/user.png" className="card--image" />
+                <img src="https://picsum.photos/200" className="card--image" />
                 <div className="card--info">
                     <img 
                         src={`../images/star-empty.png`} 
