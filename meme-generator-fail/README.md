@@ -8,9 +8,10 @@ POV: didn't read the instructions properly:
 So I'll be cloning this project and doing it the intended way, using an array of objects instead of an API :("
 
 Is what I said but I just realised the challenge explicitely says "don't worry about displaying the image yet"
-I guess I divided the exercise in two now, in this folder I made the API call, in the other I used the mock API data
+I guess I divided the exercise in two now, in this folder I made the API call, in the other I used the mock API data...
+Too bad but it's okay, you can find the exercise in the parent folder React-Scrimba-Course, and if you're interested into my REST API calling check the js exercises repo, I got some in there !
 
-
+- - - - -
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
