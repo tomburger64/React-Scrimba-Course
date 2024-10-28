@@ -21,4 +21,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-personnal note: Okay 5 seconds in, Vite my beloved ily, wdym I don't have to do the create root thing anymore please marry me
+personnal note: Okay 5 seconds in, Vite my beloved, what do you mean I don't have to do the create root thing anymore please marry me
