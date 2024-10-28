@@ -36,7 +36,9 @@ export default function ContactCard() {
             };
         });
 
-        console.log(contact.isFavorite);
+        // since react works asynchronously, (on my machine) the log shows the opposite of what the bool actually is after setContact() does its stuff
+        // apparently could also use useEffect but I have no idea how to and I'd rather progress
+        // console.log(contact.isFavorite);
     };
 
     return (
