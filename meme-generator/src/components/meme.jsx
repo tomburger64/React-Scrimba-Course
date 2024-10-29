@@ -60,6 +60,7 @@ export default function MemeGen(){
 
 
     // meme img state
+    // apparently leaving an empty string gives an error (I don't see it anywhere though, so I'll leave it)
     const [memeImg, setMemeImg] = React.useState('');
 
     // returns random url from the api data
@@ -93,7 +94,7 @@ export default function MemeGen(){
     return(
         <div className='form-bg w-100'>
             <form action="" className='form d-flex flex-column p-5 gap-5'>
-                <p>{memeImg}</p>  {/* Use memeImg state instead of randomMeme */}
+                {/* <p>{memeImg}</p> */} {/* Use memeImg state instead of randomMeme */}
                 <div className="d-flex justify-content-between">
                     <label htmlFor="">Top caption
                         <input className="p-3 text-uppercase" type="text" placeholder='MFW (my face when)' />
@@ -116,7 +117,7 @@ export default function MemeGen(){
                     Do a test log
                 </button>
             </form>
-            <img src={memeImg} alt="" className='px-5 w-100' />  {/* Use memeImg state instead of randomMeme */}
+            <img src={memeImg} alt="" className='px-5 py-5 w-100' />  {/* Use memeImg state instead of randomMeme */}
         </div>
     )
 }
