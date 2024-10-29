@@ -21,7 +21,7 @@ export default function MemeGen(){
      * topText, bottomText, randomImage.
      * 
      * The 2 text states can default to empty strings for now,
-     * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
+     * amd randomImage should default to "http://i.imgflip.com/1bij.jpg" ← not doing that cuz it works
      * 
      * Next, create a new state variable called `allMemeImages`
      * which will default to `memesData`, which we imported above
@@ -30,6 +30,14 @@ export default function MemeGen(){
      * to reflect our newly reformed state object and array in the
      * correct way.
      */
+    
+    // using object to hold captions and meme url
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: ""
+    })
+    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
 
     // meme img state
     // apparently leaving an empty string gives an error (I don't see it anywhere though, so I'll leave it)
@@ -38,7 +46,7 @@ export default function MemeGen(){
     // returns random url from the api data
     function randomMemes(){
         // get all the urls
-        const urls = memesData.data.memes.map(meme => meme.url);
+        const urls = allMemeImages.data.memes.map(meme => meme.url);
 
         // get random int
         function getRandomInt(max) {
@@ -54,13 +62,17 @@ export default function MemeGen(){
     // log stuff to check if it's all ok
     function testLog(){
         console.log(randomMemes())
-        console.log(memeImg)
+        console.log(meme.randomImage)
     }
 
 
     function getNewMeme(e){
-        e.preventDefault()  // prevent page reload
-        setMemeImg(randomMemes())  // call random meme img url function as state
+        e.preventDefault() // prevent page reload
+
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: randomMemes()
+        })) // call random meme img url function as state value
     }
 
     return(
@@ -89,7 +101,7 @@ export default function MemeGen(){
                     Do a test log
                 </button>
             </form>
-            <img src={memeImg} alt="" className='px-5 py-5 w-100' />  {/* Use memeImg state instead of randomMeme */}
+            <img src={meme.randomImage} alt="" className='px-5 py-5 w-100' />
         </div>
     )
 }
