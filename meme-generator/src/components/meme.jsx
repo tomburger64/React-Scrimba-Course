@@ -6,8 +6,6 @@ import './style/meme.css';
 
 import memesData from '../fakeApiData';
 
-
-
 export default function MemeGen(){
 
     // reminder to self (considering how my code was before I had to "cheat"):
