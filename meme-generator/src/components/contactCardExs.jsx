@@ -17,7 +17,7 @@ export default function ContactCard() {
      * Challenge: Use a ternary to determine which star image filename
      * should be used based on the `contact.isFavorite` property
      * 
-     * this should've been local imgs but I'm lazy ↓
+     * this should've been local imgs but I'm lazy ↓ ☺☻☺☻☺
      * `true` => "https://cdn-icons-png.flaticon.com/512/541/541415.png"
      * `false` => "https://cdn-icons-png.flaticon.com/512/13/13595.png"
      * 

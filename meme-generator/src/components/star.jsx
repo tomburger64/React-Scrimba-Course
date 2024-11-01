@@ -8,17 +8,18 @@ import React from 'react';
      *   `isFavorite` to the new `isFilled` prop. X
      * - Don't worry about the abiliity to flip this value quite yet.
      *   Instead, you can test if it's working by manually changing
-     *   `isFavorite` in state above.
+     *   `isFavorite` in state above. X
      */
 
+    // dealt with props in a different way that the guy in the vid did, my way seems simpler
     // props imported: src (staricon) & isFavorite (state object isfavortie bool value)
-export default function Star(isFilled){
+export default function Star(props){
     
     return(
         <img 
-            src={isFilled.src}
+            src={props.src}
             className="card--favorite"
-            onClick={isFilled.toggleFavorite}
+            onClick={props.toggleFavorite}
         />
     )
 }
