@@ -55,6 +55,7 @@ export default function ContactCard() {
                     /> */}
                     <Star 
                         src={starIcon}
+                        isFavorite={contact.isFavorite}
                     />
                     
                     <h2 className="card--name">
