@@ -2,6 +2,8 @@ import React from "react";
 
 import './style/contact-card-exs.css';
 
+import Star from './star';
+
 export default function ContactCard() {
     const [contact, setContact] = React.useState({
         firstName: "John",
@@ -46,11 +48,15 @@ export default function ContactCard() {
             <article className="card">
                 <img src="https://picsum.photos/200" className="card--image" />
                 <div className="card--info">
-                    <img 
+                    {/* <img 
                         src={starIcon}
                         className="card--favorite"
                         onClick={toggleFavorite}
+                    /> */}
+                    <Star 
+                        src={starIcon}
                     />
+                    
                     <h2 className="card--name">
                         {contact.firstName} {contact.lastName}
                     </h2>
