@@ -19,7 +19,7 @@ export default function Star(props){
         <img 
             src={props.src}
             className="card--favorite"
-            onClick={props.toggleFavorite}
+            onClick={props.onClick}
         />
     )
 }

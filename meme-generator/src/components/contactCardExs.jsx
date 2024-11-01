@@ -56,6 +56,7 @@ export default function ContactCard() {
                     <Star 
                         src={starIcon}
                         isFavorite={contact.isFavorite}
+                        onClick={toggleFavorite}
                     />
                     
                     <h2 className="card--name">
