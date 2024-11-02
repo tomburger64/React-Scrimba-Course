@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style/business-card-star-icon.css'
+
     /**
      * Challenge: Move the star image into its own component (Star) X
      * - It should receive a prop called `isFilled` that it
@@ -16,10 +18,11 @@ import React from 'react';
 export default function Star(props){
     
     return(
-        <img 
-            src={props.src}
-            className="card--favorite"
-            onClick={props.handleClick}
-        />
+        <button className='star-icon' onClick={props.handleClick}>
+            <img 
+                src={props.src}
+                className="card--favorite"
+            />
+        </button>
     )
 }
