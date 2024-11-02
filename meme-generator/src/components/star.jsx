@@ -17,8 +17,18 @@ import './style/business-card-star-icon.css'
     // props imported: src (staricon) & isFavorite (state object isfavortie bool value)
 export default function Star(props){
     
+    /**
+     * Challenge:
+     * If the star is filled, add an aria-label of "Unmark as favorite".
+     * Otherwise, use the aria-label of "Mark as favorite".
+     */
+    // works but need to open devtools to see it work
+
     return(
-        <button className='star-icon' onClick={props.handleClick}>
+        <button className='star-icon'
+            onClick={props.handleClick}
+            aria-label={props.isFavorite ? 'Unmark as favorite' : 'Mark as favorite'}
+        >
             <img 
                 src={props.src}
                 className="card--favorite"
