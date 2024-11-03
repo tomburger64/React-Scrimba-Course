@@ -28,6 +28,7 @@ export default function Star(props){
         <button className='star-icon'
             onClick={props.handleClick}
             aria-label={props.isFavorite ? 'Unmark as favorite' : 'Mark as favorite'}
+            aria-pressed={props.isFavorite}
         >
             <img 
                 src={props.src}
