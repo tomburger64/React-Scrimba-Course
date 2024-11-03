@@ -1,10 +1,10 @@
 import React from 'react';
 
 // data
-import boxes from '../boxesData';
+import boxData from '../boxesData';
 
-// css
-import './style/boxes-ex.css';
+// child comps
+import Box from './box';
 
 export default function Boxes(props){
     /**
@@ -13,22 +13,38 @@ export default function Boxes(props){
      *    array pulled in from boxes.js X
      * 2. Map over that state array and display each one
      *    as an empty square (black border, transparent bg color)
-     *    (Don't worry about using the "on" property yet)
+     *    (Don't worry about using the "on" property yet) X
      */
 
-    // Challenge: use a ternary to determine the backgroundColor.
+    // Challenge: use a ternary to determine the backgroundColor. X
     // If darkMode is true, set it to "#222222"
     // If darkMode is false, set it to "#cccccc"
-    const styles = {
-        backgroundColor: props.darkMode ? "#222222" : "#cccccc"
-    };
+
+    /**
+     * Challenge part 2:
+     * 1. Create a separate component called "Box" and
+     *    replace the `div` with our <Box /> components X
+     * 2. Pass the Box component a prop called `on` with the
+     *    value of the same name from the `boxes` objects
+     * 3. In the Box component, apply dynamic styles to determine
+     *    the backgroundColor of the box. If it's `on`, set the
+     *    backgroundColor to "#222222". If off, set it to "none"
+     */
+
+    // const styles = {
+    //     backgroundColor: props.darkMode ? "#222222" : "#cccccc"
+    // };
     
-    const [arrayBoxes, setArrayBoxes] = React.useState(boxes);
-    const mappedBoxes = arrayBoxes.map(box => <div key={box.id} className='box' style={styles}></div>);
-    
+    const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
+
+    const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
+    // style={styles} (removed from ↑ so it doesn't change the bg colour)
+
     return (
-        <main className='bg-white w-100 p-5'>
-            <div className='d-flex gap-3'>{mappedBoxes}</div>
+        <main className='bg-white w-100 p-5 d-flex gap-3'>
+            <Box
+            stateArray={arrayBoxes}
+            />
         </main>
     );
 };
