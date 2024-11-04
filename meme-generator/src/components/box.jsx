@@ -5,7 +5,7 @@ import './style/boxes-ex.css';
 
 export default function Box(props){
 
-    // const style
+    // adding state so we can change the bg color onclick while still depending on the original props
     
     const boxes = props.stateArray.map(box => (
         <div
