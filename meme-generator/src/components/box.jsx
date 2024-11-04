@@ -24,8 +24,8 @@ export default function Box(props){
 
 
     function switchOnOff(){
-        setOnState();
-        console.log(onState)
+        console.log(props.on)
+        console.log(setOnState(values => values)) //← WHY IS IT BECOMING UNDEFINED AAAAAAAAAAH
     };
 
     const boxes = onState.map(box => {
