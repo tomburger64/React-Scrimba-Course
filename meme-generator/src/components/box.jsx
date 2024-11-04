@@ -19,13 +19,15 @@ export default function Box(props){
     // adding state to change the bg color onclick while still depending on the props
     const [onState, setOnState] = React.useState(props.on);
 
-    console.log(props.on)
+    console.log(props.on);
     console.log(onState);
 
 
     function switchOnOff(){
-        console.log(props.on)
-        console.log(setOnState(values => values)) //← WHY IS IT BECOMING UNDEFINED AAAAAAAAAAH
+        console.log(props.on);
+        console.log(onState);
+        console.log(setOnState(values => values)); //← WHY IS IT BECOMING UNDEFINED AAAAAAAAAAH
+        
     };
 
     const boxes = onState.map(box => {
