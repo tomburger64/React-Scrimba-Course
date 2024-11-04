@@ -16,23 +16,20 @@ export default function Box(props){
      * Goal: clicking each box should toggle it on and off.
      */
 
-    // adding state so we can change the bg color onclick while still depending on the original props
-    const [onState, setOnState] = React.useState(props.stateArray.map(box => box.on));
+    // adding state to change the bg color onclick while still depending on the props
+    const [onState, setOnState] = React.useState(props.on);
 
-    console.log("onstate log ........... " + onState);
+    console.log("onstate log " + onState);
 
 
+    function switchOnOff(){
+        setOnState();
+        console.log(onState)
+    };
 
-    // div → btn (accessibility)
-    const boxes = props.stateArray.map(box => {
+    const boxes = onState.map(box => {
 
-        // use box temp var from the map func used here ↑
-        // to change the on value of the state elem at the right index without losing the whole state array as you change it ytguhik
-        function switchOnOff(){
-            setOnState();
-            console.log(onState)
-        };
-
+        // div → btn (accessibility)
         return (
         <button
         className='box'

@@ -19,7 +19,7 @@ export default function App() {
       {/* <Ternary /> */}
       {/* <ThingsExs /> */}
       {/* <ContactCard /> */}
-      <Boxes darkMode={true} /> {/* ← introduction to dynamic styling */}
+      <Boxes darkMode={true} /> {/* ← prop is for introduction to dynamic styling */}
     </div>
   )
 };
