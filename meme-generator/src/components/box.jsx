@@ -19,7 +19,8 @@ export default function Box(props){
     // adding state to change the bg color onclick while still depending on the props
     const [onState, setOnState] = React.useState(props.on);
 
-    console.log("onstate log " + onState);
+    console.log(props.on)
+    console.log(onState);
 
 
     function switchOnOff(){
@@ -33,7 +34,7 @@ export default function Box(props){
         return (
         <button
         className='box'
-        key={box.id}
+        key={Math.random()}
         style={{backgroundColor: box.on ? "#222222" : "none"}}
         onClick={switchOnOff}
         ></button>
