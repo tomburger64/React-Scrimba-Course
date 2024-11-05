@@ -40,8 +40,6 @@ export default function Boxes(props){
     const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
     // style={styles} (removed from ↑ so it doesn't change the bg colour)
 
-    console.log(boxData.map(key => key))
-
     return (
         <main className='bg-white w-100 p-5 d-flex gap-3'>
             <Box

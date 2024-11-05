@@ -17,22 +17,22 @@ export default function Box(props){
      */
 
     // adding state to change the bg color onclick while still depending on the props
-    const [onState, setOnState] = React.useState(props.data);
+    const [boxData, setBoxData] = React.useState(props.data);
 
+    // console.log(props.data.map(x => x.on))
     function switchOnOff(){
-        console.log(props.data);
-        console.log(onState);
-        console.log(setOnState(values => values)); //← WHY IS IT BECOMING UNDEFINED AAAAAAAAAAH
-        
+        console.log(boxData)
+        setBoxData(prevBoxData => prevBoxData.map(box => !box.on));
+        console.log(boxData.map(box => !box.on))
     };
 
-    const boxes = onState.map(box => {
+    const boxes = boxData.map(box => {
         // div → btn (accessibility)
         return (
         <button
         className='box'
         key={Math.random()}
-        style={{backgroundColor: box.on ? "#222222" : "none"}}
+        style={{backgroundColor: box.on ? "#222222" : "transparent"}}
         onClick={switchOnOff}
         ></button>
 )});
