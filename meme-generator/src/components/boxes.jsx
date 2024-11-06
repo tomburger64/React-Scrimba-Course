@@ -5,6 +5,7 @@ import boxData from '../boxesData';
 
 // child comps
 import Box from './box';
+import boxesData from '../boxesData';
 
 export default function Boxes(props){
     /**
@@ -41,10 +42,12 @@ export default function Boxes(props){
     // style={styles} (removed from ↑ so it doesn't change the bg colour)
 
     return (
+        // my struggle was that I was rendering ONE component, passing the on prop like the exercise asks and then trying to switch the bg colour of each comp individually switch on click
+        // tldr i hate myself lol
         <main className='bg-white w-100 p-5 d-flex gap-3'>
-            <Box
-            isOn={boxData.map(data => data.on)}
-            />
+            {boxesData.map(box => (
+                <Box key={box.id} on={box.on} />
+            ))}
         </main>
     );
 };
