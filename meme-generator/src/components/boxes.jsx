@@ -43,7 +43,7 @@ export default function Boxes(props){
     return (
         <main className='bg-white w-100 p-5 d-flex gap-3'>
             <Box
-            data={boxData.map(dat => dat)}
+            isOn={boxData.map(data => data.on)}
             />
         </main>
     );

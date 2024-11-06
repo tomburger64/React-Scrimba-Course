@@ -17,13 +17,10 @@ export default function Box(props){
      */
 
     // adding state to change the bg color onclick while still depending on the props
-    const [boxData, setBoxData] = React.useState(props.data);
+    const [boxData, setBoxData] = React.useState(props.isOn);
 
-    // console.log(props.data.map(x => x.on))
+    console.log(boxData)
     function switchOnOff(){
-        console.log(boxData)
-        setBoxData(prevBoxData => prevBoxData.map(box => !box.on));
-        console.log(boxData.map(box => !box.on))
     };
 
     const boxes = boxData.map(box => {
@@ -32,7 +29,7 @@ export default function Box(props){
         <button
         className='box'
         key={Math.random()}
-        style={{backgroundColor: box.on ? "#222222" : "transparent"}}
+        style={{backgroundColor: box.isOn ? "#222222" : "transparent"}}
         onClick={switchOnOff}
         ></button>
 )});
