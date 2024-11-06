@@ -17,10 +17,14 @@ export default function Box(props){
      */
 
     const [onStatus, setOnStatus] = React.useState(props.on);
+
+    function switchBg(){
+        setOnStatus(prevOnStatus => !prevOnStatus);
+    };
     
     return(
         <>
-            <button className='box' style={{background: onStatus ? "#222" : "transparent"}}></button>
+            <button className='box' style={{background: onStatus ? "#222" : "transparent"}} onClick={switchBg}></button>
         </>
     );
 };
