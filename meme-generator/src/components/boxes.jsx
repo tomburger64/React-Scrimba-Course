@@ -44,8 +44,8 @@ export default function Boxes(props){
     //     backgroundColor: props.darkMode ? "#222222" : "#cccccc"
     // };
 
-    function toggle(){
-        console.log("clicked");
+    function toggle(id){
+        console.log(id);
     };
     
     const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
@@ -58,7 +58,7 @@ export default function Boxes(props){
         // tldr i hate myself lol
         <main className='bg-white w-100 p-5 d-flex gap-3'>
             {boxesData.map(box => (
-                <Box key={box.id} on={box.on} toggle={toggle} />
+                <Box key={box.id} id={box.id} on={box.on} toggle={toggle} />
             ))}
         </main>
     );
