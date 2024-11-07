@@ -42,7 +42,7 @@ export default function Boxes(props){
     // style={styles} (removed from ↑ so it doesn't change the bg colour)
 
     return (
-        // my struggle was that I was rendering ONE component, passing the on prop like the exercise asks and then trying to switch the bg colour of each comp individually switch on click
+        // my struggle was that I was rendering ONE component (that rendered all its boxes individually), passing the on prop like the exercise asks and then trying to switch the bg colour of each comp individually on click (might be possible but there's just so much simpler too)
         // tldr i hate myself lol
         <main className='bg-white w-100 p-5 d-flex gap-3'>
             {boxesData.map(box => (
