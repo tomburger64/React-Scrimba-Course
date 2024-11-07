@@ -24,7 +24,7 @@ export default function Box(props){
     
     return(
         <>
-            <button className='box' style={{background: onStatus ? "#222" : "transparent"}} onClick={switchBg}></button>
+            <button className='box' style={{background: onStatus ? "#222" : "transparent"}} onClick={props.toggle}></button>
         </>
     );
 };

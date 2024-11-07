@@ -26,15 +26,27 @@ export default function Boxes(props){
      * 1. Create a separate component called "Box" and
      *    replace the `div` with our <Box /> components X
      * 2. Pass the Box component a prop called `on` with the
-     *    value of the same name from the `boxes` objects
+     *    value of the same name from the `boxes` objects X
      * 3. In the Box component, apply dynamic styles to determine
      *    the backgroundColor of the box. If it's `on`, set the
-     *    backgroundColor to "#222222". If off, set it to "none"
+     *    backgroundColor to "#222222". If off, set it to "none" X
+     */
+
+    /**
+     * Challenge: Create a toggle() function that logs
+     * "clicked!" to the console X
+     * 
+     * Pass that function down to each of the Box components
+     * and set it up so when they get clicked it runs the function X
      */
 
     // const styles = {
     //     backgroundColor: props.darkMode ? "#222222" : "#cccccc"
     // };
+
+    function toggle(){
+        console.log("clicked");
+    };
     
     const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
 
@@ -46,7 +58,7 @@ export default function Boxes(props){
         // tldr i hate myself lol
         <main className='bg-white w-100 p-5 d-flex gap-3'>
             {boxesData.map(box => (
-                <Box key={box.id} on={box.on} />
+                <Box key={box.id} on={box.on} toggle={toggle} />
             ))}
         </main>
     );
