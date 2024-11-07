@@ -44,8 +44,26 @@ export default function Boxes(props){
     //     backgroundColor: props.darkMode ? "#222222" : "#cccccc"
     // };
 
+
+    /**
+     * Challenge: use setArrayBoxes to update the
+     * correct square in the array.
+     * 
+     * Make sure not to directly modify state!
+     * 
+     * Hint: look back at the lesson on updating arrays
+     * in state if you need a reminder on how to do this
+     */
     function toggle(id){
+        let newBoxArray = arrayBoxes.map(boxes => boxes);
+        console.log(newBoxArray[id - 1]); // ← this is probably the way
         console.log(id);
+        // ↑ returns the correct box
+
+        // 1 call the right box object
+        // 2 switch its on value
+
+        setArrayBoxes()
     };
     
     const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
