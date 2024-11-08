@@ -56,21 +56,32 @@ export default function Boxes(props){
      * in state if you need a reminder on how to do this
      */
         function toggle(id){
-        
-            // console.log(arrayBoxes[id - 1]); // ← this is probably the way
-            // console.log(id);
-            // ↑ returns the correct box
-    
-            // 1 call the right box object without map (else calling an int won't work)
-            // 2 switch its on value
-    
-            console.log(id)
-            console.log(arrayBoxes[id-1])
-            setArrayBoxes(prevArrayBoxes => {
-                let boxObj = prevArrayBoxes[id-1];
-                boxObj.on = !boxObj.on
-                return boxObj
-            });
+            // new state value
+            setSquares(prevSquares => {
+                // create empty new array
+                const newSquares = []
+                // for amount of objects in the state array
+                for(let i = 0; i < prevSquares.length; i++) {
+                    // have a var = to the index that's being looked at in the for loop
+                    const currentSquare = prevSquares[i]
+
+                    // if the id of the currently looked at object is = to the if received in the function
+                    if(currentSquare.id === id) {
+                        // invert its on property bool value
+                        const updatedSquare = {
+                            ...currentSquare,
+                            on: !currentSquare.on
+                        }
+                        // and then push the new square object to the new array (that was empty)
+                        newSquares.push(updatedSquare)
+                    } else {
+                        // if function id != to the function's received id, push back the current square to the new array (basically just not modifying it)
+                        newSquares.push(currentSquare)
+                    }
+                }
+                // return the new array of squares as the new state value
+                return newSquares
+            })
         };
 
     const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
