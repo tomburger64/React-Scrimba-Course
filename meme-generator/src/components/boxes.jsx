@@ -67,11 +67,13 @@ export default function Boxes(props){
             console.log(id)
             console.log(arrayBoxes[id-1])
             setArrayBoxes(prevArrayBoxes => {
-                return prevArrayBoxes[id-1];
+                let boxObj = prevArrayBoxes[id-1];
+                boxObj.on = !boxObj.on
+                return boxObj
             });
         };
 
-    // const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
+    const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
     // style={styles} (removed from ↑ so it doesn't change the bg colour)
 
     return (
