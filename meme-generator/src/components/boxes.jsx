@@ -5,44 +5,8 @@ import boxData from '../boxesData';
 
 // child comps
 import Box from './box';
-import boxesData from '../boxesData';
 
 export default function Boxes(props){
-    /**
-     * Challenge part 1:
-     * 1. Initialize state with the default value of the
-     *    array pulled in from boxes.js X
-     * 2. Map over that state array and display each one
-     *    as an empty square (black border, transparent bg color)
-     *    (Don't worry about using the "on" property yet) X
-     */
-
-    // Challenge: use a ternary to determine the backgroundColor. X
-    // If darkMode is true, set it to "#222222"
-    // If darkMode is false, set it to "#cccccc"
-
-    /**
-     * Challenge part 2:
-     * 1. Create a separate component called "Box" and
-     *    replace the `div` with our <Box /> components X
-     * 2. Pass the Box component a prop called `on` with the
-     *    value of the same name from the `boxes` objects X
-     * 3. In the Box component, apply dynamic styles to determine
-     *    the backgroundColor of the box. If it's `on`, set the
-     *    backgroundColor to "#222222". If off, set it to "none" X
-     */
-
-    /**
-     * Challenge: Create a toggle() function that logs
-     * "clicked!" to the console X
-     * 
-     * Pass that function down to each of the Box components
-     * and set it up so when they get clicked it runs the function X
-     */
-
-    // const styles = {
-    //     backgroundColor: props.darkMode ? "#222222" : "#cccccc"
-    // };
     
     const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
 
@@ -55,43 +19,41 @@ export default function Boxes(props){
      * Hint: look back at the lesson on updating arrays
      * in state if you need a reminder on how to do this
      */
-        function toggle(id){
-            // new state value
-            setSquares(prevSquares => {
-                // create empty new array
-                const newSquares = []
-                // for amount of objects in the state array
-                for(let i = 0; i < prevSquares.length; i++) {
-                    // have a var = to the index that's being looked at in the for loop
-                    const currentSquare = prevSquares[i]
-
-                    // if the id of the currently looked at object is = to the if received in the function
-                    if(currentSquare.id === id) {
-                        // invert its on property bool value
-                        const updatedSquare = {
-                            ...currentSquare,
-                            on: !currentSquare.on
-                        }
-                        // and then push the new square object to the new array (that was empty)
-                        newSquares.push(updatedSquare)
-                    } else {
-                        // if function id != to the function's received id, push back the current square to the new array (basically just not modifying it)
-                        newSquares.push(currentSquare)
+    
+    // correction commented
+        // id comes from the rendered box comp
+        function toggle(id) {
+            setArrayBoxes(prevBoxes => {
+                // empty array to not change the state directly
+                const newBoxes = [];
+                // for as much as boxes there are in the state:
+                for(let i = 0; i < prevBoxes.length; i++) {
+                    // var that's = to the current object processing in the loop
+                    const currentBox = prevBoxes[i];
+                    // if the currently processed box has the same id as the one clicked on (received through the id parameter)
+                    if(currentBox.id === id) {
+                        // creates var updated box containing everything the processed box has and swapping its .on value on/off
+                        const updatedBox = {
+                            ...currentBox,
+                            on: !currentBox.on
+                        };
+                        // push the .on swapped box back to the empty array created earlier
+                        newBoxes.push(updatedBox);
                     }
-                }
-                // return the new array of squares as the new state value
-                return newSquares
-            })
+                    // and if the id of the box != the id of the currently processed box, directly return it to the empty array
+                    else {
+                        newBoxes.push(currentBox);
+                    };
+                };
+                return newBoxes;
+            });
         };
-
-    const jsxBoxes = arrayBoxes.map(box => <div key={box.id} className='box' ></div>);
-    // style={styles} (removed from ↑ so it doesn't change the bg colour)
 
     return (
         // my struggle was that I was rendering ONE component (that rendered all its boxes individually), passing the on prop like the exercise asks and then trying to switch the bg colour of each comp individually on click (might be possible but there's just so much simpler too)
         // tldr i hate myself lol
         <main className='bg-white w-100 p-5 d-flex gap-3'>
-            {boxesData.map(box => (
+            {boxData.map(box => (
                 <Box key={box.id} id={box.id} on={box.on} toggle={toggle} />
             ))}
         </main>
