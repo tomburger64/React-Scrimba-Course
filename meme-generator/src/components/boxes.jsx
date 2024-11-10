@@ -56,7 +56,6 @@ export default function Boxes(props){
      * in state if you need a reminder on how to do this
      */
         function toggle(id){
-        
             // console.log(arrayBoxes[id - 1]); // ← this is probably the way
             // console.log(id);
             // ↑ returns the correct box
