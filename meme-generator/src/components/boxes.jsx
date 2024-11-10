@@ -7,7 +7,40 @@ import boxData from '../boxesData';
 import Box from './box';
 
 export default function Boxes(props){
-    
+
+    /**
+     * HOW IT ALL WORKS ↓
+     * - - - - -
+     * boxes.jsx receives the data from the data file (aka "boxData")
+     * boxes.js has a state arrayBoxes which defaults to the data
+     * 
+     * the boxes' data is sent through props to the child component
+     * is rendered one child component per box
+     * 
+     * 
+     * 
+     * the toggle function takes as parameter "id"
+     * id comes from the child comp, which is = to the key but passed as id seperatly
+     * id allows to identify each component, hence changing them individually
+     * 
+     * toggle changes the state value to a new empty array
+     * that array receives all the boxes objects contained in the state data
+     * and for the one box that has been clicked on (identifiable with its id),
+     * it swaps its .on status value
+     * toggle then returns the whole empty array (no longer empty)
+     * and making it the new state value
+     * 
+     * 
+     * 
+     * the toggle function is passed as a prop to each child component
+     * child comp renders a box with conditionnal style rendering depending on the .on value
+     * and has an onClick event listener with the toggle function passed as a prop
+     * the toggle func takes in argument props.id
+     * 
+     * * * * props.id is equal to the "id" parameter as the toggle func is triggered * * *
+     * (this is how it sends specific data back to the parent which has all comps mixed)
+     */
+
     const [arrayBoxes, setArrayBoxes] = React.useState(boxData);
 
         /**
