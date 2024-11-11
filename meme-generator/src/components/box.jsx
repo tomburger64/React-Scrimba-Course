@@ -8,7 +8,7 @@ export default function Box(props){
     return(
         <>
         {/* indirectly passing the toggle func as an anon arrow function
-         * this allows to pass the id prop as an argument
+         * this allows to pass the id prop as a parameter
          * as it gets rendered inside the parent component with the correct id
          * (key doesn't work because it's a unique kind of prop, hence the id prop)
          * 
