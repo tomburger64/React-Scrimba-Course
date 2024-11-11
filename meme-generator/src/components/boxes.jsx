@@ -57,28 +57,11 @@ export default function Boxes(props){
         // id comes from the rendered box comp
         function toggle(id) {
             setArrayBoxes(prevBoxes => {
-                // empty array to not change the state directly
-                const newBoxes = [];
-                // for as much as boxes there are in the state:
-                for(let i = 0; i < prevBoxes.length; i++) {
-                    // var that's = to the current object processing in the loop
-                    const currentBox = prevBoxes[i];
-                    // if the currently processed box has the same id as the one clicked on (received through the id parameter)
-                    if(currentBox.id === id) {
-                        // creates var updated box containing everything the processed box has and swapping its .on value on/off
-                        const updatedBox = {
-                            ...currentBox,
-                            on: !currentBox.on
-                        };
-                        // push the .on swapped box back to the empty array created earlier
-                        newBoxes.push(updatedBox);
-                    }
-                    // and if the id of the box != the id of the currently processed box, directly return it to the empty array
-                    else {
-                        newBoxes.push(currentBox);
-                    };
-                };
-                return newBoxes;
+                // mapping the previous state array boxes
+                return prevBoxes.map(box => {
+                    // directly doing ternary to conditionally render the changed on value
+                    return box.id === id ? {...box, on: !box.on} : box
+                });
             });
         };
 
